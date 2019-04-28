@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormLauncher</class>
+ <widget class="QWidget" name="FormLauncher">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>780</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>780</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16666666</width>
+    <height>16666666</height>
+   </size>
+  </property>
+  <property name="sizeIncrement">
+   <size>
+    <width>1</width>
+    <height>1</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>780</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>VOIDS</string>
+  </property>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>788</width>
+     <height>808</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QWidget" name="widgetLauncher" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>780</width>
+        <height>800</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>1666666</width>
+        <height>1666666</height>
+       </size>
+      </property>
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>255</red>
+            <green>255</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>61</red>
+            <green>61</green>
+            <blue>61</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>255</red>
+            <green>255</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>61</red>
+            <green>61</green>
+            <blue>61</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>61</red>
+            <green>61</green>
+            <blue>61</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>61</red>
+            <green>61</green>
+            <blue>61</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <widget class="QGroupBox" name="groupBoxOptions">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>751</width>
+         <height>101</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="title">
+        <string>Options</string>
+       </property>
+       <widget class="QPushButton" name="pushButtonConfiguration">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>27</y>
+          <width>141</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Select Configuration</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelHiddenNeurons">
+        <property name="geometry">
+         <rect>
+          <x>161</x>
+          <y>79</y>
+          <width>161</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Hidden neurons:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelInputNeurons">
+        <property name="geometry">
+         <rect>
+          <x>13</x>
+          <y>79</y>
+          <width>131</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Input neurons:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelOutputNeurons">
+        <property name="geometry">
+         <rect>
+          <x>533</x>
+          <y>79</y>
+          <width>171</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Ouput neurons:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelHiddenLayers">
+        <property name="geometry">
+         <rect>
+          <x>341</x>
+          <y>79</y>
+          <width>161</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Hidden layers:</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditConfigurationFile">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>54</y>
+          <width>731</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButtonStart">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>27</y>
+          <width>121</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Start</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButtonStop">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>27</y>
+          <width>130</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Stop</string>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="progressBar">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>27</y>
+          <width>311</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="value">
+         <number>24</number>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBoxOutput">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>540</y>
+         <width>751</width>
+         <height>251</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Output</string>
+       </property>
+       <widget class="QTextEdit" name="textEditConsole">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>24</y>
+          <width>731</width>
+          <height>211</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBoxData">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>120</y>
+         <width>751</width>
+         <height>411</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="title">
+        <string>Plot</string>
+       </property>
+       <widget class="QGraphicsView" name="graphicsViewValidation">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>361</width>
+          <height>341</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QGraphicsView" name="graphicsViewError">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>30</y>
+          <width>361</width>
+          <height>341</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButtonValidation">
+        <property name="geometry">
+         <rect>
+          <x>8</x>
+          <y>382</y>
+          <width>121</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Network out/train</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButtonError">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>382</y>
+          <width>113</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Network error</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButtonConfiguration</sender>
+   <signal>clicked()</signal>
+   <receiver>FormLauncher</receiver>
+   <slot>slotPressConfigurationButton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>94</x>
+     <y>54</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>389</x>
+     <y>259</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonStart</sender>
+   <signal>clicked()</signal>
+   <receiver>FormLauncher</receiver>
+   <slot>slotStartSimulation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>239</x>
+     <y>49</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>389</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonStop</sender>
+   <signal>clicked()</signal>
+   <receiver>FormLauncher</receiver>
+   <slot>slotStopSimulation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>369</x>
+     <y>49</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>389</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonValidation</sender>
+   <signal>clicked()</signal>
+   <receiver>FormLauncher</receiver>
+   <slot>slotShowValidationImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>80</x>
+     <y>499</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>389</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonError</sender>
+   <signal>clicked()</signal>
+   <receiver>FormLauncher</receiver>
+   <slot>slotShowErrorImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>450</x>
+     <y>499</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>389</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>window_loaded()</slot>
+  <slot>slotPressConfigurationButton()</slot>
+  <slot>slotCloseSimulation()</slot>
+  <slot>slotStartSimulation()</slot>
+  <slot>slotStopSimulation()</slot>
+  <slot>slotShowValidationImage()</slot>
+  <slot>slotShowErrorImage()</slot>
+  <slot>slotSelectImageWindow()</slot>
+ </slots>
+</ui>
