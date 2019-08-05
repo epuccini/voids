@@ -15,7 +15,7 @@
   :author "Edward Puccini epuccini@gmx.de"
   :license "LGPL"
   :depends-on ( "trivial-shell" "marshal" "fpp" "lparallel"
-				"async-syntax" "flood" "ga" "bordeaux-threads")
+				"async-syntax" "flood" "bordeaux-threads")
   :components (( :file "package" )
 			   ( :file "nn-config" :depends-on ( "package" ))
 			   ( :file "nn-neuron" :depends-on ("nn-config"))
