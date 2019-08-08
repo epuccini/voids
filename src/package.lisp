@@ -9,8 +9,6 @@
 ; -------------------------------------------------------------
 (in-package :cl-user)
 
-(require 'async-syntax)
-
 ;
 ; Package nn for neural networks
 ;
@@ -18,11 +16,10 @@
   (:use 
    #:cl 
    #:fpp 
-   #:async-syntax 
    #:flood 
-   #:ga
    #:bordeaux-threads 
-   #:lparallel)
+   #:lparallel
+   #:argparse)
   (:export
    #:*serial-id*
    #:*network-id*

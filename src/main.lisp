@@ -14,13 +14,10 @@
 
 (eval-when (:load-toplevel :compile-toplevel :execute)
   (require :trivial-garbage)
-  (use-package :fpp)
-  (use-package :lparallel)
-  (use-package :async-syntax)
   (use-package :flood)
   (use-package :nn))
 
-(enable-async-syntax)
+(require 'argparse)
 
 ;; ---------------------------------------------------------------------
 ;; Init, run and cleanup
@@ -28,7 +25,6 @@
 (defun prologue ()
   "Init application random-seed and kernel."
   (setf *random-state* (make-random-state t))
-  (setf *kernel* (make-kernel (get-cores)))
   (setf *gc-run-time* 1))
 
 (defun run (configpath &optional (test nil))
@@ -55,55 +51,33 @@ validation and tesing."
   (room)
   (format *standard-output* "~%~D epochs / ~D bytes per training set. Ready after ~D cycles! ~%" epochs epoch-size cycles)))
 
-
-(defparameter *help-message* 
-  (format nil "Usage: ann-ff [options] [configfile]~% ~
-Without given configuration file, the ~
-program starts up in repl. ~% ~
-Options:~%-c | --configuration    The configuration-file for the setup ~
-of an artificial neural network. Topology and generated output files ~
-and images are configured there. ~%~% ~
--h | --help     Prints this help message. ~
-To start a fully configured training and ~
-validation, just type:~%~%(run [configfile] [testing:t|nil])~%~% ~
-Try these demos:~%(demo-small-sine) ;; Regression of sine-function ~
-with less training-data.~%(demo-circle) ;; Regression of ~
-sine- and cosine on 2 inputs and outputs~%(demo-double) ~
-;; Regression of sine- and cosine 2 threads ~
-in parallel with one input and one output~%(demo-four) ~
-;; Regresson of four-threaded functions ~
-in parallel with one input and one output~%~%"))
-
-(defun command-line-args ()
-  "Get implementation dependent commandline
-arguments."
-  (or
-   ;;#+ECL si:*command-args*
-   #+SBCL *posix-argv*
-   #+GCL si::*command-args*
-   #+LISPWORKS system:*line-arguments-list*
-   #+CMU extensions:*command-line-words*
-   #+CLISP si:*command-args*
-   nil))
-
  (defun main ()
   "Main entry point. Without param prints this help text.
 With a specified configuration-file a optimisation-step is
 beeing executed."
-  (let ((arg1 (cadr (command-line-args)))
-		(arg2 (caddr (command-line-args))))
-  (declare (type simple-string arg1)
-		   (type simple-string arg2)
-		   (type simple-string *help-message*))
-    (handler-case
-     (cond ((or (equal arg1 "-c") (equal arg1 "--configuration"))
-	    (run arg2))
-	   ((or (equal arg1 "-h") (equal arg1 "--help"))
-	    (format t *help-message*))
-	   ((not arg1)
-	    (format t *help-message*)))
-     (error (condition)
-	    (wrn condition)))))
+  (handler-case
+      (let ((argument-data
+             (argparse:with-arguments-hash-table
+                 "ann-sim"
+               "Backpropagation feedforward neural network simulator."
+               "v1.0.4.0"
+                '(:argument "--configuration"
+                 :description "Configfile"
+                 :group "Simulation"
+                 :type 'string))))
+        (argparse:handle-unknown-arguments argument-data) 
+        (argparse:handle-missing-arguments argument-data) 
+        (run (argparse:get-argument-value argument-data "--configuration")))
+    (error (condition)
+	  (wrn condition))))
+
+  
+(defun build ()
+  "Save executable with necessary options."
+  (save-lisp-and-die "ann-sim"
+                     :executable t
+                     :toplevel 'main
+                     :save-runtime-options t))
 
 ;; ---------------------------------------------------------------------
 ;; Calling network training, validation and testing 
@@ -119,14 +93,3 @@ Epoch-size is cycles * number_of_input_data_lines"
   "Demo with configuration from file. 
 Epoch-size is cycles * number_of_input_data_lines"
   (run "../conf/circle2d-approximator.conf"))
-
-(defun demo-double ()
-  °(run "../conf/positive-sine-approximator.conf")
-  °(run "../conf/positive-cosine-approximator.conf"))
-
-(defun demo-four ()
-  °(run "../conf/positive-sine-approximator.conf")
-  °(run "../conf/positive-cosine-approximator.conf")
-  °(run "../conf/circle-approximator.conf")
-  °(run "../conf/circle3d-approximator.conf"))
-
