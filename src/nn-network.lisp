@@ -92,10 +92,13 @@
 (defmethod feed-inputs ((network nnetwork) inputs)
   "Feed input-neurons with input-values."
   (declare (type list inputs))
-  (let ((in-fn (string-to-function (getf (nnetwork-config network) :IN-FN))))
-	(dotimes (i (array-total-size (nnetwork-inputs network)))
-      (setf (n-input (aref (nnetwork-inputs network) i)) (funcall in-fn (nth i inputs))))))
+  (let ((in-fn (string-to-function (getf (nnetwork-config network) :IN-FN)))
+        (total-size (array-total-size (nnetwork-inputs network))))
+	(dotimes (i total-size)
+      (let ((idx (random total-size)))
+        (setf (n-input (aref (nnetwork-inputs network) i)) (funcall in-fn (nth idx inputs)))))))
 										;(+ input fluctations))
+                                        ;(nth i inputs) => total-size)
 
 (defmethod feed-targets ((network nnetwork) targets)
   (declare (type list targets))
