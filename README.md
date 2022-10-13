@@ -9,7 +9,7 @@ Backpropagation feedforward network simulator with GUI<br/><br/>
 
 # Load system file<br/><br/>
 
-* (asdf:load-system :voids-simulation)
+* (asdf:load-system :voids-simulation)<br/><br/>
 WARNING:
    redefining EMACS-INSPECT (#<SB-PCL:SYSTEM-CLASS COMMON-LISP:T>) in DEFMETHOD
 WARNING: DEFIMPLEMENTATION of undefined interface (WAKE-THREAD)
@@ -20,10 +20,10 @@ WARNING: System definition file #P"/Users/edward/quicklisp/dists/quicklisp/softw
 T
 
 # Buid a executable file with<br/><br/>
-* (build)
+* (build)<br/><br/>
 
 # Start a demo "Small circle"<br/><br/>
-* (demo-small-sine)
+* (demo-small-sine)<br/><br/>
 [17:07:48 / 15.08.2022]-[INF]-TRAIN phase start 'ann-ff-bp-small-sine' network: 1
 [17:07:50 / 15.08.2022]-[INF]-Realtime: 1.921 s Runtime: 1.921 s network: 1
 [17:07:50 / 15.08.2022]-[INF]-TRAIN phase end 'ann-ff-bp-small-sine' network: 1
@@ -41,7 +41,7 @@ T
 [17:07:52 / 15.08.2022]-[INF]-VALIDATION-PLOT phase end 'ann-ff-bp-small-sine' network: 1
 
 
-  20,187,552 bytes for 94,316 immobile objects (space total)
+  20,187,552 bytes for 94,316 immobile objects (space total)<br/><br/>
 
 1500 epochs / 126 bytes per training set. Ready after 189000 cycles!
 
